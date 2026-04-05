@@ -93,15 +93,41 @@ nav li:first-child{
   padding: 20px;
   justify-content: flex-start;
 }
-.menu-button{
+.menu-button-item{
   display: none;
+}
+.menu-button{
+  background: transparent;
+  border: none;
   cursor: pointer;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.menu-button:hover{
+  color: var(--deepgold);
+}
+.close-sidebar-btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  transition: 0.3s;
+}
+.close-sidebar-btn:hover{
+  color: var(--deepgold);
 }
 @media(max-width: 800px){
   .hideOnMobile{
     display: none;
   }
-  .menu-button{
+  .menu-button-item{
     display: block;
   }
 }
