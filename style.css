@@ -95,7 +95,20 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .sidebar button {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  width: 100%;
+}
+.menu-button button:hover, .sidebar button:hover {
+  color: var(--deepgold);
 }
 @media(max-width: 800px){
   .hideOnMobile{
@@ -382,6 +395,14 @@ footer {
   border-top: 1px solid #333;
   font-size: 14px;
   color: #888;
+}
+
+/* Accessibility: Focus Visible */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 @media(max-width: 768px) {
