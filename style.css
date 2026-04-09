@@ -6,6 +6,10 @@
 html {
   scroll-behavior: smooth;
 }
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
 body{
   min-height: 100vh;
   position: relative;
@@ -95,7 +99,32 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+#menu-toggle, .menu-close {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+#menu-toggle {
+  height: 100%;
+  padding: 0 20px;
+}
+#menu-toggle:hover {
+  color: var(--deepgold);
+}
+.menu-close {
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
+}
+.menu-close:hover {
+  color: var(--deepgold);
 }
 @media(max-width: 800px){
   .hideOnMobile{
