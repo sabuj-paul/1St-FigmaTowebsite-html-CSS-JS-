@@ -425,3 +425,56 @@ footer {
     font-size: 32px;
   }
 }
+
+/* --- Accessibility and UX Improvements --- */
+
+/* Modern focus indicator for keyboard navigation */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 2px;
+}
+
+/* Button Reset & Navigation Button Styling */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-toggle {
+  height: 80px;
+  padding: 0 20px;
+  transition: color 0.3s;
+}
+
+#menu-toggle:hover {
+  color: var(--deepgold);
+}
+
+.close-button {
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: var(--deepgold);
+}
+
+/* Ensure images don't break layout if loading fails */
+img {
+  font-style: italic;
+  background: #eee;
+  color: #666;
+}
