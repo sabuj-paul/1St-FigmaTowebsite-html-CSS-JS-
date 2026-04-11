@@ -97,6 +97,28 @@ nav li:first-child{
   display: none;
   cursor: pointer;
 }
+.menu-button button, .sidebar li button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.menu-button button {
+  padding: 0 20px;
+}
+.sidebar li button {
+  padding: 20px;
+  justify-content: flex-start;
+}
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 2px;
+}
 @media(max-width: 800px){
   .hideOnMobile{
     display: none;
