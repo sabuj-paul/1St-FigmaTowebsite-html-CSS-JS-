@@ -6,6 +6,25 @@
 html {
   scroll-behavior: smooth;
 }
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--deepgold);
+  color: white;
+  padding: 10px 20px;
+  z-index: 2000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
+}
+:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 4px;
+}
 body{
   min-height: 100vh;
   position: relative;
