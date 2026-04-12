@@ -1,0 +1,3 @@
+## 2025-01-24 - Semantic ARIA Placement & Keyboard Visibility
+**Learning:** ARIA attributes (like `aria-expanded`, `aria-label`) should be placed directly on the focusable interactive element (e.g., `<a>` or `<button>`) rather than a parent container (e.g., `<li>`) to ensure consistent announcement by screen readers. Additionally, global `:focus-visible` styles and "Skip to Content" links are foundational UX improvements for static landing pages that significantly enhance keyboard navigability without altering the primary design.
+**Action:** Always verify that interactive attributes are attached to the element receiving keyboard focus. Use the brand's accent color for high-contrast focus indicators to maintain visual harmony.
