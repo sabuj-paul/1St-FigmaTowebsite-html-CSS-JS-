@@ -425,3 +425,16 @@ footer {
     font-size: 32px;
   }
 }
+
+/* Accessibility: Focus Visible Styles */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.btn-ctn:focus-visible,
+.second-button:focus-visible,
+.social-links a:focus-visible,
+.menu-button:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
