@@ -13,8 +13,8 @@
 <!--//nav or header section-->
 <header>
   <nav>
-    <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+    <ul class="sidebar" id="sidebar-nav">
+      <li><button onclick="hideSidebar()" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26" aria-hidden="true"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></button></li>
       <li><a href="#">Home</a></li>
       <li><a href="#">Menu</a></li>
       <li><a href="#">About Us</a></li>
@@ -23,13 +23,17 @@
     </ul>
     <div class="navbar-container">
         <ul class="navbar">
-           <li> <a class="logo" href="#"><i class="fa-solid fa-leaf"></i> Gourmet<span>Garden</span></a></li>
+           <li> <a class="logo" href="#"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Gourmet<span>Garden</span></a></li>
            <li class="hideOnMobile"><a href="#home"><span>Home</span></a></li>
            <li class="hideOnMobile"><a href="#menu">Menu</a></li>
            <li class="hideOnMobile"><a href="#about">About Us</a></li>
            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
             <li class="hideOnMobile"><a class="btn" href="#book">Book a Table</a></li>
-           <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+           <li class="menu-button">
+             <button id="menu-toggle" onclick="showSidebar()" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar-nav">
+               <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" aria-hidden="true"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>
+             </button>
+           </li>
         </ul>
     </div>
   </nav>
@@ -39,7 +43,7 @@
    <div class="container inner">
        <div class="high-growth">
            <p class="grow-para">Exceptional Taste</p>
-           <i class="fa-solid fa-utensils"></i>
+           <i class="fa-solid fa-utensils" aria-hidden="true"></i>
        </div>
        <div class="about-info">
          <h2 class="second-line">Experience <span>Fine</span> Dining</h2>
@@ -56,9 +60,9 @@
         <span>Accolades</span>
         </h5>
          <div class="accolades-list">
-             <span><i class="fa-solid fa-star"></i> Michelin Guide</span>
-             <span><i class="fa-solid fa-award"></i> Forbes Travel</span>
-             <span><i class="fa-solid fa-wine-glass"></i> Wine Spectator</span>
+             <span><i class="fa-solid fa-star" aria-hidden="true"></i> Michelin Guide</span>
+             <span><i class="fa-solid fa-award" aria-hidden="true"></i> Forbes Travel</span>
+             <span><i class="fa-solid fa-wine-glass" aria-hidden="true"></i> Wine Spectator</span>
          </div>
      </div>
       <div class="hero-image-container">
@@ -83,21 +87,21 @@
       <div class="vector-sec">
           <div>
              <div class="vector-icon">
-               <i class="fa-solid fa-leaf vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+               <i class="fa-solid fa-leaf vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;" aria-hidden="true"></i>
               <p class="vector-para">Organic <br><span>Ingredients</span></p>
              </div>
              <div class="vector-icon">
-               <i class="fa-solid fa-wine-glass vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+               <i class="fa-solid fa-wine-glass vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;" aria-hidden="true"></i>
                <p class="vector-para">Fine<br><span>Wines</span></p>
              </div>
           </div>
           <div>
                 <div class="vector-icon" >
-                   <i class="fa-solid fa-fire-burner vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+                   <i class="fa-solid fa-fire-burner vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;" aria-hidden="true"></i>
                   <p class="vector-para">Expert<br> <span>Chefs</span></p>
                 </div>
              <div class="vector-icon">
-               <i class="fa-solid fa-calendar-check vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+               <i class="fa-solid fa-calendar-check vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;" aria-hidden="true"></i>
               <p class="vector-para">Private <br> <span>Events</span></p>
              </div>
           </div>
@@ -126,12 +130,12 @@
   <footer>
     <div class="footer-container">
       <div class="footer-col">
-        <a class="footer-logo" href="#"><i class="fa-solid fa-leaf"></i> Gourmet<span>Garden</span></a>
+        <a class="footer-logo" href="#"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Gourmet<span>Garden</span></a>
         <p>Experience the art of fine dining where every plate tells a story of passion, quality, and culinary excellence.</p>
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -155,8 +159,8 @@
       <div class="footer-col" id="book">
         <h4>Reservation</h4>
         <p>Book your table today for an unforgettable dining experience.</p>
-        <p style="margin-top: 15px;"><i class="fa-solid fa-phone" style="color: var(--deepgold);"></i> +1 (555) 123-4567</p>
-        <p><i class="fa-solid fa-envelope" style="color: var(--deepgold);"></i> info@gourmetgarden.com</p>
+        <p style="margin-top: 15px;"><i class="fa-solid fa-phone" style="color: var(--deepgold);" aria-hidden="true"></i> +1 (555) 123-4567</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--deepgold);" aria-hidden="true"></i> info@gourmetgarden.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -166,12 +170,16 @@
 
   <script>
     function showSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'flex'
+      const sidebar = document.querySelector('.sidebar');
+      const toggle = document.getElementById('menu-toggle');
+      sidebar.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
     }
     function hideSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'none'
+      const sidebar = document.querySelector('.sidebar');
+      const toggle = document.getElementById('menu-toggle');
+      sidebar.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
     }
   </script>
 
