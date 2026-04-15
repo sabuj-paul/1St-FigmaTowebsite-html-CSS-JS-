@@ -61,6 +61,10 @@ nav a{
 nav a:hover{
   color: var(--deepgold);
 }
+nav a:focus-visible, .btn:focus-visible, .btn-ctn:focus-visible, .second-button:focus-visible, .menu-button button:focus-visible, .close-sidebar:focus-visible, .social-links a:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 4px;
+}
 nav li:first-child{
   margin-right: auto;
 }
@@ -78,11 +82,18 @@ nav li:first-child{
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.05);
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.4s ease, visibility 0.4s;
+}
+.sidebar.active{
+  transform: translateX(0);
+  visibility: visible;
 }
 .sidebar li{
   width: 100%;
@@ -95,7 +106,23 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .close-sidebar {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: color 0.3s;
+}
+.menu-button button:hover, .close-sidebar:hover {
+  color: var(--deepgold);
+}
+.close-sidebar {
+  padding: 20px;
 }
 @media(max-width: 800px){
   .hideOnMobile{
