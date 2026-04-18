@@ -1,0 +1,3 @@
+## 2024-05-22 - Accessible and Smooth Navigation
+**Learning:** Programmatic focus management (shifting focus to the close button on open and back to the trigger on close) is essential for screen reader and keyboard accessibility in mobile navigation. Direct `style.display` toggling prevents smooth CSS animations; using `transform` combined with `visibility: hidden` maintains accessibility (removing from tab order) while allowing for hardware-accelerated transitions.
+**Action:** Always use semantic `<button>` for UI toggles and manage `aria-expanded` and keyboard focus explicitly when opening/closing overlays.
