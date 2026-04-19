@@ -95,7 +95,16 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .sidebar button {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
 }
 @media(max-width: 800px){
   .hideOnMobile{
@@ -393,6 +402,12 @@ footer {
   .footer-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* Focus visibility for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
 }
 
 @media(max-width: 1024px) {

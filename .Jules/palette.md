@@ -1,0 +1,3 @@
+## 2025-01-24 - [Accessible Navigation & Focus Management]
+**Learning:** In static restaurant landing pages, mobile navigation often relies on non-semantic anchors and click handlers. Transitioning to semantic <button> elements with ARIA labels and manual focus management (shifting focus to the sidebar on open and back to the toggle on close) provides a significantly better experience for keyboard and screen reader users without altering the visual design.
+**Action:** Always replace icon-only anchor toggles with <button> elements and implement focus traps or focus shifts for all modal/sidebar interactions to ensure intuitive navigation.
