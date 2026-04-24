@@ -93,9 +93,14 @@ nav li:first-child{
   padding: 20px;
   justify-content: flex-start;
 }
+#close-sidebar, #menu-toggle {
+  background: none; border: none; cursor: pointer; padding: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: inherit; transition: 0.3s;
+}
+#close-sidebar:hover, #menu-toggle:hover { color: var(--deepgold); }
 .menu-button{
   display: none;
-  cursor: pointer;
 }
 @media(max-width: 800px){
   .hideOnMobile{
@@ -375,6 +380,9 @@ footer {
   background: var(--deepgold);
   transform: translateY(-5px);
 }
+
+:focus-visible { outline: 2px solid var(--deepgold); outline-offset: 4px; }
+
 .footer-bottom {
   text-align: center;
   margin-top: 60px;
