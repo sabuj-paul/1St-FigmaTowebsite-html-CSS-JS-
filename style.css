@@ -61,6 +61,10 @@ nav a{
 nav a:hover{
   color: var(--deepgold);
 }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
+}
 nav li:first-child{
   margin-right: auto;
 }
@@ -78,11 +82,18 @@ nav li:first-child{
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.05);
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s;
+}
+.sidebar.active{
+  transform: translateX(0);
+  visibility: visible;
 }
 .sidebar li{
   width: 100%;
@@ -96,6 +107,19 @@ nav li:first-child{
 .menu-button{
   display: none;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0 20px;
+  height: 100%;
+}
+#close-sidebar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
 }
 @media(max-width: 800px){
   .hideOnMobile{
