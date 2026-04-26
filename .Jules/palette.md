@@ -1,0 +1,3 @@
+## 2024-04-26 - [Improve Mobile Navigation Accessibility and Interaction]
+**Learning:** Sidebar transitions in GourmetGarden should use CSS 'transform' and 'visibility' properties rather than 'display: none' to support smooth animations and prevent focus management issues with hidden elements. Navigation triggers (toggle/close) are implemented as <button> elements nested within <li> tags when part of a <ul> list, ensuring semantic button accessibility while maintaining the intended list structure and styling.
+**Action:** Always use semantic <button> for JS-triggered interactions and manage ARIA states (aria-expanded, aria-controls) and programmatic focus when implementing overlays or sidebars.
