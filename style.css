@@ -3,6 +3,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 4px;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -78,11 +82,18 @@ nav li:first-child{
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.05);
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+.sidebar.active {
+  transform: translateX(0);
+  visibility: visible;
 }
 .sidebar li{
   width: 100%;
@@ -95,7 +106,24 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .sidebar button {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  width: 100%;
+}
+.sidebar button {
+  justify-content: flex-start;
+  padding: 20px;
+}
+.menu-button button:hover, .sidebar button:hover {
+  color: var(--deepgold);
 }
 @media(max-width: 800px){
   .hideOnMobile{
