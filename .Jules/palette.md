@@ -1,0 +1,3 @@
+## 2025-01-24 - Sidebar Accessibility and Animation
+**Learning:** Using 'display: none' for mobile sidebars prevents smooth CSS transitions and can cause issues with focus management if not handled carefully. Replacing it with 'transform: translateX(100%)' and 'visibility: hidden' allows for fluid animations while still hiding the element from the accessibility tree and layout when closed. Additionally, programmatic focus management (moving focus to the close button on open and returning it to the trigger on close) is essential for a seamless screen reader experience.
+**Action:** Use 'transform' and 'visibility' for off-canvas elements and always synchronize ARIA states (like aria-expanded) with the interaction.

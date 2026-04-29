@@ -57,6 +57,15 @@ nav a{
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  height: 100%;
+}
+.menu-button button {
+  padding: 0 20px;
+}
+.sidebar button {
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
 }
 nav a:hover{
   color: var(--deepgold);
@@ -78,11 +87,18 @@ nav li:first-child{
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.05);
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+.sidebar.active {
+  transform: translateX(0);
+  visibility: visible;
 }
 .sidebar li{
   width: 100%;
@@ -95,7 +111,20 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .sidebar button {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.menu-button button:hover, .sidebar button:hover {
+  color: var(--deepgold);
 }
 @media(max-width: 800px){
   .hideOnMobile{
@@ -136,6 +165,10 @@ nav li:first-child{
   background-color: #a66d10;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(198, 131, 19, 0.2);
+}
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
 }
 span{
   color: var(--deepgold);
