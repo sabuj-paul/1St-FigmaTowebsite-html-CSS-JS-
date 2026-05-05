@@ -23,6 +23,31 @@ h1, h2, h3, .logo {
   font-family: 'Playfair Display', serif;
 }
 
+/* Button resets for semantic menu triggers */
+#menu-toggle, #close-sidebar {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+#close-sidebar {
+  padding: 20px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* Keyboard navigation focus states */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 nav{
   background-color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
