@@ -9,6 +9,7 @@ html {
 body{
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   --deepgold: #C68313;
   --gold: #FFD700;
   --bg-light: #FFFCF7;
@@ -88,14 +89,28 @@ nav li:first-child{
   width: 100%;
   height: auto;
 }
-.sidebar a{
+.sidebar a, .sidebar button{
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
+}
+#close-sidebar, #menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  padding: 0;
+}
+#close-sidebar {
   width: 100%;
   padding: 20px;
   justify-content: flex-start;
 }
 .menu-button{
   display: none;
-  cursor: pointer;
 }
 @media(max-width: 800px){
   .hideOnMobile{
@@ -393,6 +408,11 @@ footer {
   .footer-container {
     grid-template-columns: 1fr;
   }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--deepgold) !important;
+  outline-offset: 2px !important;
 }
 
 @media(max-width: 1024px) {
