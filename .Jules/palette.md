@@ -1,0 +1,3 @@
+## 2025-01-24 - Accessible Sidebar Navigation Patterns
+**Learning:** Transitioning from 'display: none' to CSS transforms for sidebars improves performance and allows for smooth animations, but requires careful 'visibility' management and manual focus trapping (e.g., focusing the close button) to ensure a high-quality experience for both sighted and screen-reader users. Additionally, navigation links within a mobile sidebar should explicitly trigger the sidebar's closure to avoid blocking the viewport after a section is selected.
+**Action:** Use 'transform' and 'visibility' for overlays, implement manual focus management in JS, and ensure all interactive elements have appropriate ARIA attributes and closure triggers.
