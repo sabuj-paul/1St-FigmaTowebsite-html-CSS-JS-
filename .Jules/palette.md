@@ -1,0 +1,3 @@
+## 2025-01-24 - Accessible Animated Sidebar Pattern
+**Learning:** Abruptly toggling `display: none` on mobile sidebars prevents entry/exit animations and can confuse screen reader users if focus isn't managed. Using `transform` and `visibility` allows for smooth transitions while keeping the element hidden from the accessibility tree when closed. Programmatic focus shifts (e.g., to a close button) require a small delay (approx 100ms) to ensure the element is focusable after the visibility change.
+**Action:** Always replace anchor-based toggles with semantic `<button>` elements, use `aria-expanded` to communicate state, and synchronize CSS transitions with JavaScript focus management.

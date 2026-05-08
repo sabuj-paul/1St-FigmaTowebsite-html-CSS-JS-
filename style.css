@@ -9,6 +9,7 @@ html {
 body{
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   --deepgold: #C68313;
   --gold: #FFD700;
   --bg-light: #FFFCF7;
@@ -78,24 +79,51 @@ nav li:first-child{
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.05);
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s;
+}
+.sidebar.active{
+  transform: translateX(0);
+  visibility: visible;
 }
 .sidebar li{
   width: 100%;
   height: auto;
 }
-.sidebar a{
+.sidebar a, .sidebar button{
   width: 100%;
   padding: 20px;
   justify-content: flex-start;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s;
+}
+.sidebar a:hover, .sidebar button:hover{
+  color: var(--deepgold);
 }
 .menu-button{
   display: none;
+}
+.menu-button button{
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 @media(max-width: 800px){
   .hideOnMobile{
