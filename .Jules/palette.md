@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Sidebar Pattern for Static Sites
+**Learning:** For mobile sidebars, using `display: none` prevents smooth animations and breaks focus management if not handled carefully. A more robust pattern uses CSS `transform` for movement and `visibility` to ensure the element is truly hidden from screen readers and the tab order when inactive.
+**Action:** Implement sidebars with `visibility: hidden` and `transform: translateX(100%)`. On activation, switch to `visibility: visible` and `transform: translateX(0)`, and programmatically shift focus to the first interactive element (usually a close button) with a small delay to ensure the transition has started. Always return focus to the trigger element when closing.
