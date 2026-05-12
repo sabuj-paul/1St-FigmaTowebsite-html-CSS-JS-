@@ -9,6 +9,7 @@ html {
 body{
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   --deepgold: #C68313;
   --gold: #FFD700;
   --bg-light: #FFFCF7;
@@ -17,6 +18,12 @@ body{
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
 }
 
 h1, h2, h3, .logo {
@@ -73,29 +80,64 @@ nav li:first-child{
   top: 0;
   right: 0;
   height: 100vh;
-  width: 250px;
+  width: 280px;
   background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.05);
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+}
+.sidebar.active {
+  transform: translateX(0);
+  visibility: visible;
 }
 .sidebar li{
   width: 100%;
   height: auto;
 }
-.sidebar a{
+.sidebar a, .sidebar button{
   width: 100%;
-  padding: 20px;
+  padding: 20px 30px;
   justify-content: flex-start;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sidebar a:hover, .sidebar button:hover {
+  background-color: rgba(198, 131, 19, 0.05);
+  color: var(--deepgold);
 }
 .menu-button{
   display: none;
+}
+#menu-toggle, #close-sidebar {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: 0.3s;
+}
+#menu-toggle:hover {
+  color: var(--deepgold);
 }
 @media(max-width: 800px){
   .hideOnMobile{
