@@ -17,6 +17,12 @@ body{
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
 }
 
 h1, h2, h3, .logo {
