@@ -425,3 +425,12 @@ footer {
     font-size: 32px;
   }
 }
+
+/* Accessibility: Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.second-button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 2px;
+}
