@@ -1,0 +1,3 @@
+## 2025-05-14 - Focus Management and Internal Navigation
+**Learning:** In static landing pages with internal anchor navigation, programmatic focus-return (e.g., when closing a mobile sidebar) can conflict with the browser's default behavior of resetting focus to the body or the target section. A short delay (e.g., 100ms `setTimeout`) for the `focus()` call is necessary to ensure focus is correctly captured by the trigger element after navigation occurs.
+**Action:** Always use a `setTimeout` of at least 100ms when returning focus to a trigger element if the action also involves internal page navigation.
