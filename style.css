@@ -9,6 +9,7 @@ html {
 body{
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   --deepgold: #C68313;
   --gold: #FFD700;
   --bg-light: #FFFCF7;
@@ -424,4 +425,13 @@ footer {
   .second-line {
     font-size: 32px;
   }
+}
+
+/* Accessibility: Focus-visible styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.menu-button:focus-visible {
+  outline: 2px solid var(--deepgold);
+  outline-offset: 4px;
 }
