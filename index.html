@@ -13,13 +13,13 @@
 <!--//nav or header section-->
 <header>
   <nav>
-    <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Book a Table</a></li>
+    <ul class="sidebar" id="sidebar" aria-hidden="true">
+      <li><a href="#" role="button" onclick="hideSidebar(); return false;" aria-label="Close navigation menu"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26" aria-hidden="true"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="#home" onclick="hideSidebar()">Home</a></li>
+      <li><a href="#menu" onclick="hideSidebar()">Menu</a></li>
+      <li><a href="#about" onclick="hideSidebar()">About Us</a></li>
+      <li><a href="#contact" onclick="hideSidebar()">Contact</a></li>
+      <li><a href="#book" onclick="hideSidebar()">Book a Table</a></li>
     </ul>
     <div class="navbar-container">
         <ul class="navbar">
@@ -29,7 +29,7 @@
            <li class="hideOnMobile"><a href="#about">About Us</a></li>
            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
             <li class="hideOnMobile"><a class="btn" href="#book">Book a Table</a></li>
-           <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+           <li class="menu-button"><a href="#" id="menuBtn" role="button" onclick="showSidebar(); return false;" aria-expanded="false" aria-haspopup="true" aria-label="Open navigation menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" aria-hidden="true"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </div>
   </nav>
@@ -166,12 +166,27 @@
 
   <script>
     function showSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'flex'
+      const sidebar = document.getElementById('sidebar');
+      const menuBtn = document.getElementById('menuBtn');
+      sidebar.style.display = 'flex';
+      sidebar.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+
+      // Focus the first link in the sidebar for easy navigation
+      const firstLink = sidebar.querySelector('a');
+      if (firstLink) firstLink.focus();
     }
     function hideSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'none'
+      const sidebar = document.getElementById('sidebar');
+      const menuBtn = document.getElementById('menuBtn');
+      sidebar.style.display = 'none';
+      sidebar.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+
+      // Return focus to the menu button
+      setTimeout(() => {
+        menuBtn.focus();
+      }, 100);
     }
   </script>
 
