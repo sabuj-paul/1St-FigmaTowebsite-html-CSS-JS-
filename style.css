@@ -425,3 +425,15 @@ footer {
     font-size: 32px;
   }
 }
+
+/* Accessibility: Focus visible styles */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+body {
+    overflow-x: hidden;
+}
