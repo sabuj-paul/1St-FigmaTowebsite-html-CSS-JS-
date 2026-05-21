@@ -1,0 +1,3 @@
+## 2026-05-21 - [Mobile Sidebar Accessibility & Interaction]
+**Learning:** Using `transform: translateX` for sidebar animations keeps the elements in the tab order even when off-screen. Additionally, programmatic `focus()` restoration can conflict with the browser's default anchor scroll behavior if timed incorrectly.
+**Action:** Use `visibility: hidden` on inactive transformed containers to remove them from the tab order. When returning focus after a navigation click, avoid immediate `focus()` calls if they trigger a "scroll-to-top" or reset the scroll position; ensure transitions are finalized and navigation intent is preserved.
