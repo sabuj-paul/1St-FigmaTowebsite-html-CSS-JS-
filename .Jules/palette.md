@@ -1,0 +1,3 @@
+## 2024-05-24 - Focus Management in Mobile Sidebar
+**Learning:** When a mobile sidebar link triggers both an internal anchor navigation and a JavaScript function to close the sidebar, a race condition can occur. The browser's default behavior of focusing the document body or the target section after navigation can override programmatic attempts to return focus to the menu trigger.
+**Action:** Use a `setTimeout` (approx. 300ms) in the `hideSidebar` function to delay returning focus to the trigger element. This ensures the focus transition happens after the browser has finalized the anchor navigation and any CSS transitions.
