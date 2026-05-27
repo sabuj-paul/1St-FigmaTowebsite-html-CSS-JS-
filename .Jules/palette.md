@@ -1,0 +1,3 @@
+## 2025-05-15 - Programmatic Focus Management in Mobile Sidebars
+**Learning:** In GourmetGarden, internal navigation links within the mobile sidebar cause a scroll jump to the target section. If focus is returned to the trigger button immediately without a slight delay, the browser's default scroll behavior may interfere with the intended focus state. A 300ms `setTimeout` for `menuBtn.focus()` ensures focus return happens after transitions and anchor navigation are finalized.
+**Action:** Use a 300ms delay for focus-return calls after closing animated overlays or performing anchor-based navigation.
