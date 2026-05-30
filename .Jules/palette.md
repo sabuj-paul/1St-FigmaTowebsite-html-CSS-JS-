@@ -1,0 +1,3 @@
+## 2025-01-24 - Focus Management in Sidebar Navigation
+**Learning:** In static sites with animated or overlay sidebars, programmatically shifting focus back to the trigger button after a navigation link click is often overridden by the browser's default focus reset to the destination section or body. A delayed focus call (e.g., 300ms) ensures the focus return happens after the browser's navigation and any transitions are settled.
+**Action:** Always use a `setTimeout` of at least 300ms when returning focus to a toggle button after an internal navigation link has been activated from within a modal or sidebar.
