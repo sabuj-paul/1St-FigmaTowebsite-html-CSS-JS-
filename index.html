@@ -13,13 +13,13 @@
 <!--//nav or header section-->
 <header>
   <nav>
-    <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Book a Table</a></li>
+    <ul class="sidebar" id="sidebar-menu">
+      <li onclick="hideSidebar(true)"><a href="#" id="closeBtn" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="#home" onclick="hideSidebar(false)">Home</a></li>
+      <li><a href="#menu" onclick="hideSidebar(false)">Menu</a></li>
+      <li><a href="#about" onclick="hideSidebar(false)">About Us</a></li>
+      <li><a href="#contact" onclick="hideSidebar(false)">Contact</a></li>
+      <li><a href="#book" onclick="hideSidebar(false)">Book a Table</a></li>
     </ul>
     <div class="navbar-container">
         <ul class="navbar">
@@ -29,7 +29,7 @@
            <li class="hideOnMobile"><a href="#about">About Us</a></li>
            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
             <li class="hideOnMobile"><a class="btn" href="#book">Book a Table</a></li>
-           <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+           <li class="menu-button"><a href="#" id="menuBtn" onclick="showSidebar(); return false;" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar-menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </div>
   </nav>
@@ -70,7 +70,7 @@
     <div>
         <img class="about-image-1"  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Chef at work" style="width: 100%; max-width: 500px; border-radius: 20px;">
     </div>
-  <div class="text-box">
+  <div class="text-box" id="menu">
       <div class="high-growth">
           <p class="grow-para">Our Specialties</p>
       </div>
@@ -166,12 +166,32 @@
 
   <script>
     function showSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'flex'
+      const sidebar = document.querySelector('.sidebar');
+      const menuBtn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('closeBtn');
+
+      sidebar.style.display = 'flex';
+      menuBtn.setAttribute('aria-expanded', 'true');
+
+      // Focus the close button when sidebar opens
+      setTimeout(() => {
+        closeBtn.focus();
+      }, 100);
     }
-    function hideSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'none'
+
+    function hideSidebar(returnFocus){
+      const sidebar = document.querySelector('.sidebar');
+      const menuBtn = document.getElementById('menuBtn');
+
+      sidebar.style.display = 'none';
+      menuBtn.setAttribute('aria-expanded', 'false');
+
+      // Return focus to menu button only if explicitly closed (not on navigation)
+      if (returnFocus) {
+        setTimeout(() => {
+          menuBtn.focus();
+        }, 300);
+      }
     }
   </script>
 

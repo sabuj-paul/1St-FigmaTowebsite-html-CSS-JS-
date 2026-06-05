@@ -1,0 +1,3 @@
+## 2025-05-15 - Focus Management in Sidebar Navigation
+**Learning:** When implementing an animated or interactive sidebar menu, focus should be programmatically moved to the first interactive element (usually the close button) to keep keyboard users in the context. However, focus should only return to the trigger button if the menu was explicitly canceled; if the user navigated to a new section, focus should stay on the target or reset to document body to avoid confusing jumps.
+**Action:** Use a boolean parameter in the `hideSidebar` function to distinguish between explicit cancellation and navigation-induced closing.
