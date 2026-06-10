@@ -1,0 +1,3 @@
+## 2025-01-24 - Enhanced Sidebar Accessibility and Focus Management
+**Learning:** Programmatic focus management (shifting focus to the close button on open and returning it to the trigger on close) significantly improves the experience for keyboard and screen reader users in animated or 'display: flex/none' sidebars. Adding `focus-visible` styles ensures that these users have a clear visual indicator of their position, which was previously missing.
+**Action:** Always implement focus traps or at least initial focus shifting for mobile menus, and ensure every interactive element has a high-contrast `focus-visible` state.
