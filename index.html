@@ -10,26 +10,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a href="#home" class="skip-link">Skip to Content</a>
 <!--//nav or header section-->
 <header>
   <nav>
-    <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Book a Table</a></li>
+    <ul class="sidebar" id="sidebar-menu">
+      <li onclick="hideSidebar(true)"><a href="#" id="closeBtn" aria-label="Close menu" onclick="return false;"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="#home" onclick="hideSidebar(false)">Home</a></li>
+      <li><a href="#menu" onclick="hideSidebar(false)">Menu</a></li>
+      <li><a href="#about-us" onclick="hideSidebar(false)">About Us</a></li>
+      <li><a href="#contact-us" onclick="hideSidebar(false)">Contact</a></li>
+      <li><a href="#book-table" onclick="hideSidebar(false)">Book a Table</a></li>
     </ul>
     <div class="navbar-container">
         <ul class="navbar">
-           <li> <a class="logo" href="#"><i class="fa-solid fa-leaf"></i> Gourmet<span>Garden</span></a></li>
+           <li> <a class="logo" href="#home"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Gourmet<span>Garden</span></a></li>
            <li class="hideOnMobile"><a href="#home"><span>Home</span></a></li>
            <li class="hideOnMobile"><a href="#menu">Menu</a></li>
-           <li class="hideOnMobile"><a href="#about">About Us</a></li>
-           <li class="hideOnMobile"><a href="#contact">Contact</a></li>
-            <li class="hideOnMobile"><a class="btn" href="#book">Book a Table</a></li>
-           <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+           <li class="hideOnMobile"><a href="#about-us">About Us</a></li>
+           <li class="hideOnMobile"><a href="#contact-us">Contact</a></li>
+            <li class="hideOnMobile"><a class="btn" href="#book-table">Book a Table</a></li>
+           <li class="menu-button" id="menuBtnCtn" onclick="showSidebar()"><a href="#" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar-menu" onclick="return false;"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </div>
   </nav>
@@ -39,7 +40,7 @@
    <div class="container inner">
        <div class="high-growth">
            <p class="grow-para">Exceptional Taste</p>
-           <i class="fa-solid fa-utensils"></i>
+           <i class="fa-solid fa-utensils" aria-hidden="true"></i>
        </div>
        <div class="about-info">
          <h2 class="second-line">Experience <span>Fine</span> Dining</h2>
@@ -56,9 +57,9 @@
         <span>Accolades</span>
         </h5>
          <div class="accolades-list">
-             <span><i class="fa-solid fa-star"></i> Michelin Guide</span>
-             <span><i class="fa-solid fa-award"></i> Forbes Travel</span>
-             <span><i class="fa-solid fa-wine-glass"></i> Wine Spectator</span>
+             <span><i class="fa-solid fa-star" aria-hidden="true"></i> Michelin Guide</span>
+             <span><i class="fa-solid fa-award" aria-hidden="true"></i> Forbes Travel</span>
+             <span><i class="fa-solid fa-wine-glass" aria-hidden="true"></i> Wine Spectator</span>
          </div>
      </div>
       <div class="hero-image-container">
@@ -66,11 +67,11 @@
       </div>
 </div>
 <hr>
-<section class="text-box-2" id="about">
+<section class="text-box-2" id="about-us">
     <div>
         <img class="about-image-1"  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Chef at work" style="width: 100%; max-width: 500px; border-radius: 20px;">
     </div>
-  <div class="text-box">
+  <div class="text-box" id="menu">
       <div class="high-growth">
           <p class="grow-para">Our Specialties</p>
       </div>
@@ -83,21 +84,21 @@
       <div class="vector-sec">
           <div>
              <div class="vector-icon">
-               <i class="fa-solid fa-leaf vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+               <i class="fa-solid fa-leaf vector-i" aria-hidden="true" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
               <p class="vector-para">Organic <br><span>Ingredients</span></p>
              </div>
              <div class="vector-icon">
-               <i class="fa-solid fa-wine-glass vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+               <i class="fa-solid fa-wine-glass vector-i" aria-hidden="true" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
                <p class="vector-para">Fine<br><span>Wines</span></p>
              </div>
           </div>
           <div>
                 <div class="vector-icon" >
-                   <i class="fa-solid fa-fire-burner vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+                   <i class="fa-solid fa-fire-burner vector-i" aria-hidden="true" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
                   <p class="vector-para">Expert<br> <span>Chefs</span></p>
                 </div>
              <div class="vector-icon">
-               <i class="fa-solid fa-calendar-check vector-i" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
+               <i class="fa-solid fa-calendar-check vector-i" aria-hidden="true" style="color: var(--deepgold); font-size: 40px; padding: 20px;"></i>
               <p class="vector-para">Private <br> <span>Events</span></p>
              </div>
           </div>
@@ -106,7 +107,7 @@
      </div>
 
 </section>
-  <section  class="hero-area" id="contact">
+  <section  class="hero-area" id="contact-us">
      <div >
          <div class="high-growth">
              <p class="grow-para">Visit Us</p>
@@ -126,12 +127,12 @@
   <footer>
     <div class="footer-container">
       <div class="footer-col">
-        <a class="footer-logo" href="#"><i class="fa-solid fa-leaf"></i> Gourmet<span>Garden</span></a>
+        <a class="footer-logo" href="#home"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Gourmet<span>Garden</span></a>
         <p>Experience the art of fine dining where every plate tells a story of passion, quality, and culinary excellence.</p>
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -139,8 +140,8 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#menu">Menu</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#contact-us">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -152,11 +153,11 @@
           <li><a href="#">Wine List</a></li>
         </ul>
       </div>
-      <div class="footer-col" id="book">
+      <div class="footer-col" id="book-table">
         <h4>Reservation</h4>
         <p>Book your table today for an unforgettable dining experience.</p>
-        <p style="margin-top: 15px;"><i class="fa-solid fa-phone" style="color: var(--deepgold);"></i> +1 (555) 123-4567</p>
-        <p><i class="fa-solid fa-envelope" style="color: var(--deepgold);"></i> info@gourmetgarden.com</p>
+        <p style="margin-top: 15px;"><i class="fa-solid fa-phone" aria-hidden="true" style="color: var(--deepgold);"></i> +1 (555) 123-4567</p>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true" style="color: var(--deepgold);"></i> info@gourmetgarden.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -166,13 +167,43 @@
 
   <script>
     function showSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'flex'
+      const sidebar = document.querySelector('.sidebar');
+      const menuBtn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('closeBtn');
+
+      sidebar.style.display = 'flex';
+      menuBtn.setAttribute('aria-expanded', 'true');
+
+      // Focus the close button for keyboard users
+      setTimeout(() => {
+        closeBtn.focus();
+      }, 300);
     }
-    function hideSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'none'
+
+    function hideSidebar(returnFocus){
+      const sidebar = document.querySelector('.sidebar');
+      const menuBtn = document.getElementById('menuBtn');
+
+      sidebar.style.display = 'none';
+      menuBtn.setAttribute('aria-expanded', 'false');
+
+      if (returnFocus) {
+        // Return focus to menu trigger if canceled by user
+        setTimeout(() => {
+          menuBtn.focus();
+        }, 300);
+      }
     }
+
+    // Handle Escape key to close sidebar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar.style.display === 'flex') {
+          hideSidebar(true);
+        }
+      }
+    });
   </script>
 
 </body>
