@@ -10,16 +10,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to Content</a>
 <!--//nav or header section-->
 <header>
   <nav>
     <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" length="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Book a Table</a></li>
+      <li onclick="hideSidebar(true)"><a href="#" id="closeBtn" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="#home" onclick="hideSidebar(false)">Home</a></li>
+      <li><a href="#menu" onclick="hideSidebar(false)">Menu</a></li>
+      <li><a href="#about" onclick="hideSidebar(false)">About Us</a></li>
+      <li><a href="#contact" onclick="hideSidebar(false)">Contact</a></li>
+      <li><a href="#book" onclick="hideSidebar(false)">Book a Table</a></li>
     </ul>
     <div class="navbar-container">
         <ul class="navbar">
@@ -29,13 +30,14 @@
            <li class="hideOnMobile"><a href="#about">About Us</a></li>
            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
             <li class="hideOnMobile"><a class="btn" href="#book">Book a Table</a></li>
-           <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+           <li class="menu-button" onclick="showSidebar()"><a href="#" id="menuBtn" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </div>
   </nav>
 </header>
 <!--hero section-->
  <div class="hero-area" id="home">
+    <div id="main-content"></div>
    <div class="container inner">
        <div class="high-growth">
            <p class="grow-para">Exceptional Taste</p>
@@ -70,7 +72,7 @@
     <div>
         <img class="about-image-1"  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Chef at work" style="width: 100%; max-width: 500px; border-radius: 20px;">
     </div>
-  <div class="text-box">
+  <div class="text-box" id="menu">
       <div class="high-growth">
           <p class="grow-para">Our Specialties</p>
       </div>
@@ -126,12 +128,12 @@
   <footer>
     <div class="footer-container">
       <div class="footer-col">
-        <a class="footer-logo" href="#"><i class="fa-solid fa-leaf"></i> Gourmet<span>Garden</span></a>
+        <a class="footer-logo" href="#" aria-label="GourmetGarden Home"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Gourmet<span>Garden</span></a>
         <p>Experience the art of fine dining where every plate tells a story of passion, quality, and culinary excellence.</p>
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -166,13 +168,25 @@
 
   <script>
     function showSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'flex'
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.style.display = 'flex';
+      document.getElementById('closeBtn').focus();
     }
-    function hideSidebar(){
-      const sidebar = document.querySelector('.sidebar')
-      sidebar.style.display = 'none'
+    function hideSidebar(returnFocus){
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.style.display = 'none';
+      if (returnFocus) {
+        document.getElementById('menuBtn').focus();
+      }
     }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar.style.display === 'flex') {
+          hideSidebar(true);
+        }
+      }
+    });
   </script>
 
 </body>
