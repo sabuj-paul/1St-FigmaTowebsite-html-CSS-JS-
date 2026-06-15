@@ -61,6 +61,14 @@ nav a{
 nav a:hover{
   color: var(--deepgold);
 }
+nav a:focus-visible,
+.btn:focus-visible,
+.btn-ctn:focus-visible,
+.second-button:focus-visible,
+.social-links a:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
 nav li:first-child{
   margin-right: auto;
 }
