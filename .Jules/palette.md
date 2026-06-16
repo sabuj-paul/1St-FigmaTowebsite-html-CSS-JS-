@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Sidebar Focus Management
+**Learning:** In animated or display-toggled sidebars, programmatic focus management requires a small delay (e.g., 300ms) to ensure the element is interactive and the transition is underway. Additionally, focus should only be returned to the trigger button when the user explicitly cancels the action (e.g., Close button or Escape key), but NOT when they navigate to a new section, to prevent focus from jumping back unexpectedly.
+**Action:** Use a `returnFocus` boolean parameter in the `hideSidebar` function and wrap focus calls in `setTimeout`.
