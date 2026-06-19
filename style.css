@@ -61,6 +61,10 @@ nav a{
 nav a:hover{
   color: var(--deepgold);
 }
+nav a:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: -4px;
+}
 nav li:first-child{
   margin-right: auto;
 }
@@ -137,6 +141,10 @@ nav li:first-child{
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(198, 131, 19, 0.2);
 }
+.btn:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
 span{
   color: var(--deepgold);
 }
@@ -191,6 +199,10 @@ span{
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(198, 131, 19, 0.2);
 }
+.btn-ctn:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
 .second-button{
   font-size: 15px;
   color: var(--deepgold);
@@ -208,6 +220,10 @@ span{
   background-color: var(--deepgold);
   color: white;
   transform: translateY(-3px);
+}
+.second-button:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
 }
 .icon-sec{
   margin-top: 40px;
@@ -374,6 +390,10 @@ footer {
 .social-links a:hover {
   background: var(--deepgold);
   transform: translateY(-5px);
+}
+.social-links a:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
 }
 .footer-bottom {
   text-align: center;
