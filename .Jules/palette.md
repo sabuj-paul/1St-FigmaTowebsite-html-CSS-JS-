@@ -1,0 +1,3 @@
+## 2025-01-24 - Focus Management in Sidebars
+**Learning:** For mobile sidebars, focus management is a critical micro-UX detail. Programmatically shifting focus to the close button on open and returning it to the trigger on explicit close (but NOT on navigation) ensures a seamless keyboard experience. A 300ms delay for focus shift helps sync with CSS transitions, preventing focus from being lost on elements that are not yet fully interactive.
+**Action:** Always implement conditional focus return (e.g., `hideSidebar(returnFocus)`) and use `setTimeout` to align programmatic focus with visual transitions.
