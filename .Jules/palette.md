@@ -1,0 +1,3 @@
+## 2026-06-20 - Accessible Mobile Sidebar Transitions and Focus Management
+**Learning:** Using `visibility: hidden` combined with `transform: translateX(100%)` allows for smooth CSS transitions while ensuring the sidebar is correctly removed from the accessibility tree and tab order when closed. Programmatic focus management (moving focus to the close button on open and returning it to the trigger on close) is essential for a seamless keyboard navigation experience.
+**Action:** Always prefer `visibility` + `transform` over `display: none` for animated overlays, and implement explicit focus traps or focus shifts for all modal-like components.
