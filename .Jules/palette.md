@@ -1,0 +1,3 @@
+## 2025-06-24 - Focus Management in Animated Sidebars
+**Learning:** Programmatic focus shifts (e.g., moving focus to a "Close" button when a sidebar opens) often require a short delay (e.g., 300ms) to ensure the element is visible and interactive as the transition begins. Additionally, focus should only be returned to the trigger button when the user explicitly cancels/closes the overlay; for internal navigation links, allowing the browser to handle focus via the anchor jump provides a smoother experience.
+**Action:** Implement `setTimeout` for focus shifts during transitions and use a boolean flag (e.g., `returnFocus`) in closing functions to manage focus return logic conditionally.

@@ -425,3 +425,14 @@ footer {
     font-size: 32px;
   }
 }
+
+/* Focus Visibility Improvements */
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+nav a:focus-visible,
+.sidebar a:focus-visible {
+  outline-offset: -4px;
+}
