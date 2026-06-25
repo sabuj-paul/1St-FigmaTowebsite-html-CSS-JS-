@@ -1,0 +1,4 @@
+## 2025-05-14 - Accessible Mobile Sidebar Pattern
+**Learning:** Mobile sidebars often suffer from "focus loss" where the user's keyboard focus remains on the background or vanishes when the menu opens/closes. Proper accessibility requires programmatically shifting focus to the close button upon opening, and returning it to the trigger upon closing. Using `setTimeout` (approx 300ms) ensures that focus shifts happen after CSS transitions have completed, preventing focus from landing on elements that are still technically 'hidden' or 'display: none'.
+
+**Action:** Always implement a `hideSidebar(returnFocus)` pattern where `returnFocus` is true only when the user explicitly cancels/closes the menu (e.g., Close button or Escape key), but false when they navigate via a link (allowing the browser to handle the jump to the new section).
