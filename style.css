@@ -58,7 +58,7 @@ nav a{
   justify-content: center;
   transition: 0.3s;
 }
-nav a:hover{
+nav a:hover, .menu-button:hover, #closeBtn:hover {
   color: var(--deepgold);
 }
 nav li:first-child{
@@ -93,16 +93,36 @@ nav li:first-child{
   padding: 20px;
   justify-content: flex-start;
 }
-.menu-button{
-  display: none;
+.menu-button, #closeBtn {
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+}
+.sidebar a, #closeBtn {
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.menu-button {
+  display: none;
+  height: 100%;
+  padding: 0 20px;
+  transition: 0.3s;
 }
 @media(max-width: 800px){
   .hideOnMobile{
     display: none;
   }
   .menu-button{
-    display: block;
+    display: flex;
   }
 }
 .logo {
