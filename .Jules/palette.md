@@ -1,0 +1,3 @@
+## 2025-05-15 - Improving Mobile Navigation Accessibility
+**Learning:** In static landing pages, mobile sidebars often use non-semantic list items with `onclick` handlers for navigation toggles. This breaks keyboard accessibility and screen reader flow. Additionally, missing section IDs for internal anchors leads to broken "Home" and "Menu" links, which are critical for user orientation.
+**Action:** Always convert navigation triggers to semantic `<button>` elements with `aria-label`. Ensure every internal link points to a valid `id` in the DOM. Use `onclick="hideSidebar()"` on sidebar links to provide immediate visual feedback and close the overlay upon navigation.
