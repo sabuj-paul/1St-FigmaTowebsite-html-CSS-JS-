@@ -23,6 +23,29 @@ h1, h2, h3, .logo {
   font-family: 'Playfair Display', serif;
 }
 
+/* Button Reset */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Focus Indicators */
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+nav a:focus-visible {
+  outline-offset: -4px; /* Inset focus for nav links to stay within padding */
+}
+
 nav{
   background-color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -88,10 +111,15 @@ nav li:first-child{
   width: 100%;
   height: auto;
 }
-.sidebar a{
+.sidebar a, .sidebar button {
   width: 100%;
   padding: 20px;
   justify-content: flex-start;
+  transition: 0.3s;
+  color: #333;
+}
+.sidebar a:hover, .sidebar button:hover {
+  color: var(--deepgold);
 }
 .menu-button{
   display: none;
@@ -102,7 +130,9 @@ nav li:first-child{
     display: none;
   }
   .menu-button{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 .logo {
