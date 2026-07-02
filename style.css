@@ -6,6 +6,10 @@
 html {
   scroll-behavior: smooth;
 }
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
 body{
   min-height: 100vh;
   position: relative;
