@@ -6,6 +6,13 @@
 html {
   scroll-behavior: smooth;
 }
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+.sidebar a:focus-visible {
+  outline-offset: -4px;
+}
 body{
   min-height: 100vh;
   position: relative;
@@ -95,7 +102,21 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .sidebar button {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+.sidebar button {
+  padding: 20px;
+  width: 100%;
+  justify-content: flex-start;
 }
 @media(max-width: 800px){
   .hideOnMobile{
