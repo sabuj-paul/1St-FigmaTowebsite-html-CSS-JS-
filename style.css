@@ -95,7 +95,26 @@ nav li:first-child{
 }
 .menu-button{
   display: none;
+}
+.menu-button button, .sidebar button {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar button {
+  padding: 20px;
+  width: 100%;
+  justify-content: flex-start;
+}
+.menu-button button:focus-visible, .sidebar button:focus-visible,
+.sidebar a:focus-visible, .navbar a:focus-visible, .btn:focus-visible,
+.btn-ctn:focus-visible, .second-button:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 2px;
 }
 @media(max-width: 800px){
   .hideOnMobile{
