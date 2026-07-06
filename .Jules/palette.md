@@ -1,0 +1,3 @@
+## 2025-05-15 - [Accessible Mobile Navigation & Focus Management]
+**Learning:** Converting generic links used as UI toggles to semantic `<button>` elements with `aria-expanded` and `aria-label` significantly improves screen reader clarity. Managing focus (moving focus to the close button on open, and returning to the trigger on close/escape) prevents keyboard users from getting lost in the DOM. Adding `onclick="hideSidebar()"` to mobile navigation links ensures the UI overlay doesn't obstruct the view after a section transition.
+**Action:** Always use semantic buttons for UI toggles, implement explicit focus return logic, and ensure mobile menus close automatically upon link selection to provide a seamless transition.
