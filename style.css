@@ -93,9 +93,28 @@ nav li:first-child{
   padding: 20px;
   justify-content: flex-start;
 }
+.sidebar button{
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  color: #333;
+}
 .menu-button{
   display: none;
+}
+.menu-button button{
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media(max-width: 800px){
   .hideOnMobile{
@@ -104,6 +123,16 @@ nav li:first-child{
   .menu-button{
     display: block;
   }
+}
+
+:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+nav a:focus-visible,
+.sidebar button:focus-visible {
+  outline-offset: -4px;
 }
 .logo {
   font-size: 28px;
