@@ -1,0 +1,3 @@
+## 2025-05-15 - [Mobile Navigation Focus Management]
+**Learning:** In single-page applications with mobile sidebars, focus must be returned to the trigger element (menu button) only when the menu is explicitly closed (Close button or Escape). When navigation occurs via a link inside the sidebar, the browser naturally handles focus reset or movement to the new section, so forced focus return to the menu button should be avoided to prevent confusing jumps.
+**Action:** Use a conditional parameter in the `hideSidebar` function (e.g., `returnFocus`) to distinguish between explicit closure and navigation-triggered closure.
