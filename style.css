@@ -20,6 +20,17 @@ body{
   line-height: 1.6;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+nav a:focus-visible,
+.sidebar a:focus-visible {
+  outline-offset: -4px;
+}
+
 h1, h2, h3, .logo {
   font-family: 'Playfair Display', serif;
 }
