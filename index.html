@@ -193,6 +193,15 @@
       // Return focus to the toggle button
       toggle.focus();
     }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar && sidebar.classList.contains('active')) {
+          hideSidebar();
+        }
+      }
+    });
   </script>
 
 </body>
