@@ -453,3 +453,13 @@ footer {
     font-size: 32px;
   }
 }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+nav a:focus-visible {
+  outline-offset: -4px;
+}
