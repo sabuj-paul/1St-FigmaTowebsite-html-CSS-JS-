@@ -15,11 +15,11 @@
   <nav>
     <ul class="sidebar" id="sidebar-nav">
       <li><button id="close-sidebar" onclick="hideSidebar()" aria-label="Close navigation menu"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></button></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Book a Table</a></li>
+      <li><a href="#home" onclick="hideSidebar()">Home</a></li>
+      <li><a href="#menu" onclick="hideSidebar()">Menu</a></li>
+      <li><a href="#about" onclick="hideSidebar()">About Us</a></li>
+      <li><a href="#contact" onclick="hideSidebar()">Contact</a></li>
+      <li><a href="#book" onclick="hideSidebar()">Book a Table</a></li>
     </ul>
     <div class="navbar-container">
         <ul class="navbar">
@@ -193,6 +193,15 @@
       // Return focus to the toggle button
       toggle.focus();
     }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar && sidebar.classList.contains('active')) {
+          hideSidebar();
+        }
+      }
+    });
   </script>
 
 </body>
