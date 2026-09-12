@@ -453,3 +453,16 @@ footer {
     font-size: 32px;
   }
 }
+
+/* Accessibility: Keyboard focus indicators */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--deepgold);
+  outline-offset: 4px;
+}
+
+nav a:focus-visible,
+.sidebar a:focus-visible,
+.sidebar button:focus-visible {
+  outline-offset: -4px;
+}
